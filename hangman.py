@@ -1,4 +1,8 @@
-import random, hangman_art, hangman_words
+import random, hangman_art, hangman_words, os
+
+#Define clear temrinal function
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 #Intro Logo
 print(hangman_art.logo)
@@ -30,6 +34,7 @@ def user_input_checking():
     global guessed_letter
     user_input = input("Please provide a letter\n").lower()
 
+    clear_terminal()
     #Check and update guess word
     for num in range(length_of_word):
         if user_input == answer[num]:
